@@ -13,6 +13,10 @@ plugins {
 group = 'hexlet.code'
 version = '1.0-SNAPSHOT'
 
+compileJava {
+  options.release = 11
+}
+
 application {
   mainClass = 'hexlet.code.App'
 }
