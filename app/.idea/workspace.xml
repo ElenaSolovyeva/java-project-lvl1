@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7d9af654-369a-4ffb-8fae-e32e1f7fa47c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hexlet/code/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hexlet/code/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hexlet/code/Cli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hexlet/code/Cli.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +54,37 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="app" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build setup" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="app" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="distribution" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="app" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="documentation" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="app" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="help" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="app" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="app" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="verification" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -81,6 +114,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Gradle.app [:App.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.app [check].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.app [clean].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.app [installDist].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.app [run].executor&quot;: &quot;Run&quot;,
@@ -91,19 +125,50 @@
     &quot;onboarding.tips.debug.path&quot;: &quot;/home/elena/IdeaProjects/java-project-lvl1/app/src/main/java/hexlet/code/Main.java&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.app [run]">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="hexlet.code.App" />
-      <module name="app.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="hexlet.code.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+  <component name="RunManager" selected="Gradle.app [checkstyleMain]">
+    <configuration name="app [check]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="check" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="app [checkstyleMain]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="checkstyleMain" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
     </configuration>
     <configuration name="app [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -173,10 +238,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.app [checkstyleMain]" />
+        <item itemvalue="Gradle.app [check]" />
+        <item itemvalue="Gradle.app [clean]" />
         <item itemvalue="Gradle.app [run]" />
         <item itemvalue="Gradle.app [installDist]" />
-        <item itemvalue="Gradle.app [clean]" />
-        <item itemvalue="Application.App" />
       </list>
     </recent_temporary>
   </component>

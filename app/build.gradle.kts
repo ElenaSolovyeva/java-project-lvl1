@@ -1,6 +1,7 @@
 plugins {
-    id("java")
     application
+    checkstyle
+    id("java")
 }
 
 group = "hexlet.code"
@@ -8,6 +9,10 @@ version = "1.0-SNAPSHOT"
 
 application {
     mainClass.set("hexlet.code.App")
+}
+
+checkstyle {
+    toolVersion = "10.3.3"
 }
 
 repositories {
