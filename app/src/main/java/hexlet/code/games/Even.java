@@ -1,21 +1,14 @@
-package hexlet.code;
-import java.util.Scanner;
-public class Cli {
-    public static String userName;
-    public static void greeting() {
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        Scanner scanner = new Scanner(System.in);
-        userName = scanner.next();
-        System.out.println("Hello, " + userName + "!");
-    }
+package hexlet.code.games;
 
-    public static void playEven() {
+import java.util.Scanner;
+
+public class Even {
+    public static void playEven(String userName, int MAX_ROUNDS_COUNT) {
         int counter = 0;
         String positiveAnswer = "yes";
         String negativeAnswer = "no";
 
-        while (counter < 3) {
+        while (counter < MAX_ROUNDS_COUNT) {
             System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
             int number = (int) (Math.random() * 10);
             boolean isEven = number % 2 == 0;
@@ -33,29 +26,11 @@ public class Cli {
                     correctAnswer = positiveAnswer;
                 }
                 System.out.println("'" + userAnswer + "'" + "is a wrong answer ;(. Correct answer was "
-                                + "'" + correctAnswer + "'");
-                System.out.println("Let's try again, " + userAnswer);
+                        + "'" + correctAnswer + "'");
+                System.out.println("Let's try again, " + userName);
                 return;
             }
         }
         System.out.println("Congratulations, " + userName + "!");
-    }
-
-    public static void selectGame() {
-        System.out.println("Please enter the game number and press Enter.");
-        System.out.println("1 - Greet");
-        System.out.println("2 - Even");
-        System.out.println("0 - Exit");
-        System.out.print("Your choice: ");
-        Scanner scanner = new Scanner(System.in);
-        String gameNumber = scanner.next();
-        System.out.println();
-
-        if (gameNumber.equals("1")) {
-            greeting();
-        } else if (gameNumber.equals("2")) {
-            greeting();
-            playEven();
-        }
     }
 }
