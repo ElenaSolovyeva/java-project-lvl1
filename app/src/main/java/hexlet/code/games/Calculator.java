@@ -39,7 +39,7 @@ public class Calculator {
                 counter += 1;
             } else {
 
-                System.out.println("'" + userAnswer + "'" + "is a wrong answer ;(. Correct answer was "
+                System.out.println("'" + userAnswer + "'" + " is a wrong answer ;(. Correct answer was "
                         + "'" + rightAnswer + "'");
                 System.out.println("Let's try again, " + userName);
                 return;

@@ -25,7 +25,7 @@ public class Even {
                 if (userAnswer.equals(negativeAnswer)) {
                     correctAnswer = positiveAnswer;
                 }
-                System.out.println("'" + userAnswer + "'" + "is a wrong answer ;(. Correct answer was "
+                System.out.println("'" + userAnswer + "'" + " is a wrong answer ;(. Correct answer was "
                         + "'" + correctAnswer + "'");
                 System.out.println("Let's try again, " + userName);
                 return;

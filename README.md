@@ -16,3 +16,6 @@
 
 ### Game "Greatest Common Devisor"
 [![asciicast](https://asciinema.org/a/TlKVzJI0opi9HTGbjpbC4GBFM.svg)](https://asciinema.org/a/TlKVzJI0opi9HTGbjpbC4GBFM)
+
+### Game "Progression"
+[![asciicast](https://asciinema.org/a/pu2ejDCkvdnUoMQ3GaoWdx6pO.svg)](https://asciinema.org/a/pu2ejDCkvdnUoMQ3GaoWdx6pO)

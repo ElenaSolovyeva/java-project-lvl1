@@ -2,11 +2,18 @@ package hexlet.code;
 import hexlet.code.games.Calculator;
 import hexlet.code.games.Even;
 import hexlet.code.games.GreatestCommonDivisor;
+import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 public class Engine {
     public static final int MAX_ROUNDS_COUNT = 3;
-    private static final String[][] GAMES = {{"1", "Greet"}, {"2", "Even"}, {"3", "Calc"}, {"4", "GCD"}, {"0", "Exit"}};
+    private static final String[][] GAMES = {
+            {"1", "Greet"},
+            {"2", "Even"},
+            {"3", "Calc"},
+            {"4", "GCD"},
+            {"5", "Progression"},
+            {"0", "Exit"}};
     private static String userName = "";
     public static void greeting() {
         System.out.println("Welcome to the Brain Games!");
@@ -42,7 +49,13 @@ public class Engine {
                 greeting();
                 GreatestCommonDivisor.playGCD(userName, MAX_ROUNDS_COUNT);
             }
-            default -> { }
+            case "5" -> {
+                greeting();
+                Progression.playProgression(userName, MAX_ROUNDS_COUNT);
+            }
+            default -> {
+                return;
+            }
         }
     }
 }
