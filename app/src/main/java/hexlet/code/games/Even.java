@@ -3,22 +3,22 @@ package hexlet.code.games;
 import java.util.Scanner;
 
 public class Even {
-    public static void playEven(String userName, int MAX_ROUNDS_COUNT) {
+    public static void playEven(String userName, int maxRoundsCount) {
         int counter = 0;
         String positiveAnswer = "yes";
         String negativeAnswer = "no";
 
-        while (counter < MAX_ROUNDS_COUNT) {
+        while (counter < maxRoundsCount) {
             System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
             int number = (int) (Math.random() * 10);
             boolean isEven = number % 2 == 0;
             System.out.println("Question: " + number);
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Your answer: ");
+            System.out.print("Your answer: ");
             String userAnswer = scanner.next();
 
             if (isEven && userAnswer.equals(positiveAnswer) || !isEven && userAnswer.equals(negativeAnswer)) {
-                System.out.println("Correct!");
+                System.out.println("\nCorrect!");
                 counter += 1;
             } else {
                 String correctAnswer = negativeAnswer;

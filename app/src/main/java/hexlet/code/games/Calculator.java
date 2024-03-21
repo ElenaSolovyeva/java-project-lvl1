@@ -3,11 +3,11 @@ package hexlet.code.games;
 import java.util.Scanner;
 
 public class Calculator {
-    public static void playCalculator(String userName, int MAX_ROUNDS_COUNT) {
+    public static void playCalculator(String userName, int maxRoundsCount) {
         int counter = 0;
         String[] operations = {"+", "-", "*"};
 
-        while (counter < MAX_ROUNDS_COUNT) {
+        while (counter < maxRoundsCount) {
             System.out.println("What is the result of the expression?");
             int firstNumber = (int) (Math.random() * 10) + 1;
             int secondNumber = (int) (Math.random() * 10) + 1;
@@ -31,11 +31,11 @@ public class Calculator {
 
             System.out.println("Question: " + firstNumber + " " + operations[index] + " " + secondNumber);
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Your answer: ");
+            System.out.print("Your answer: ");
             String userAnswer = scanner.next();
 
             if (userAnswer.equals(rightAnswer + "")) {
-                System.out.println("Correct!");
+                System.out.println("\nCorrect!");
                 counter += 1;
             } else {
 
