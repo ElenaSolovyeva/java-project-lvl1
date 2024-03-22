@@ -2,13 +2,16 @@ package hexlet.code.games;
 
 import java.util.Scanner;
 
-public class Calculator {
+public class Calc {
+    public static final int ID = 3;
+    public static final String TITEL = "Calc";
+    public static final String RULES = "What is the result of the expression?";
     public static void playCalculator(String userName, int maxRoundsCount) {
         int counter = 0;
         String[] operations = {"+", "-", "*"};
 
         while (counter < maxRoundsCount) {
-            System.out.println("What is the result of the expression?");
+            System.out.println(RULES);
             int firstNumber = (int) (Math.random() * 10) + 1;
             int secondNumber = (int) (Math.random() * 10) + 1;
             int index = (int) (Math.random() * 10) % 3;
@@ -38,7 +41,6 @@ public class Calculator {
                 System.out.println("\nCorrect!");
                 counter += 1;
             } else {
-
                 System.out.println("'" + userAnswer + "'" + " is a wrong answer ;(. Correct answer was "
                         + "'" + rightAnswer + "'");
                 System.out.println("Let's try again, " + userName);

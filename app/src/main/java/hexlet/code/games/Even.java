@@ -3,13 +3,16 @@ package hexlet.code.games;
 import java.util.Scanner;
 
 public class Even {
+    public static final String RULES = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    public static final int ID = 2;
+    public static final String TITEL = "Even";
     public static void playEven(String userName, int maxRoundsCount) {
         int counter = 0;
         String positiveAnswer = "yes";
         String negativeAnswer = "no";
 
         while (counter < maxRoundsCount) {
-            System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+            System.out.println(RULES);
             int number = (int) (Math.random() * 10);
             boolean isEven = number % 2 == 0;
             System.out.println("Question: " + number);

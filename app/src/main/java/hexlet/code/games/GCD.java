@@ -2,7 +2,12 @@ package hexlet.code.games;
 
 import java.util.Scanner;
 
-public class GreatestCommonDivisor {
+/*GCD: Greatest Common Divisor*/
+public class GCD {
+    public static final int ID = 4;
+    public static final String TITEL = "GCD";
+    public static final String RULES = "Find the greatest common divisor of given numbers.";
+
     public static int getGCD(int first, int second) {
         int maxNumber = Math.abs(Math.max(first, second));
         int result = 1;
@@ -16,7 +21,7 @@ public class GreatestCommonDivisor {
     }
     public static void playGCD(String userName, int maxRoundsCount) {
         int counter = 0;
-        System.out.println("Find the greatest common divisor of given numbers.");
+        System.out.println(RULES);
 
         while (counter < maxRoundsCount) {
             int multiplier = (int) (2 + (Math.random() * 10) % 5);

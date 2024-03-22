@@ -1,61 +1,52 @@
 package hexlet.code;
-import hexlet.code.games.Calculator;
-import hexlet.code.games.Even;
-import hexlet.code.games.GreatestCommonDivisor;
-import hexlet.code.games.Progression;
 
+import hexlet.code.games.Prime;
+import hexlet.code.util.Games;
 import java.util.Scanner;
+import static hexlet.code.util.Utils.POSITIVE_FEEDBACK;
+import static hexlet.code.util.Utils.giveNegativeFeedback;
+import static hexlet.code.util.Utils.greeting;
+import static hexlet.code.util.Utils.selectGame;
+
 public class Engine {
     public static final int MAX_ROUNDS_COUNT = 3;
-    private static final String[][] GAMES = {
-            {"1", "Greet"},
-            {"2", "Even"},
-            {"3", "Calc"},
-            {"4", "GCD"},
-            {"5", "Progression"},
-            {"0", "Exit"}};
-    private static String userName = "";
-    public static void greeting() {
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        Scanner scanner = new Scanner(System.in);
-        userName = scanner.next();
-        System.out.println("Hello, " + userName + "!");
-    }
 
-    public static void selectGame() {
-        System.out.println("Please enter the game number and press Enter.");
-
-        for (String[] game : GAMES) {
-            System.out.println(game[0] + " - " + game[1]);
+    public static void play() {
+        final int gameNumber = selectGame(); // GAME_NUMBER isn't accept by linter
+        if (gameNumber == 0) {
+            return;
         }
-        System.out.print("Your choise: ");
+        final String userName = greeting();
+        int counter = 0;
+        System.out.println(Games.getRules(gameNumber));
+        while (counter < MAX_ROUNDS_COUNT) {
+            String questionParameters;
+            String rightAnswer = "";
+            String userAnswer;
 
-        Scanner scanner = new Scanner(System.in);
-        String gameNumber = scanner.next();
-        System.out.println();
+            switch (gameNumber) {
+                case 6:
+                    questionParameters = Prime.generateQuestionParameters();
+                    rightAnswer = Prime.giveRightAnswer(questionParameters);
+                    break;
+                default:
+                    questionParameters = "Question parameters are not defined";
+            }
 
-        switch (gameNumber) {
-            case "1" -> greeting();
-            case "2" -> {
-                greeting();
-                Even.playEven(userName, MAX_ROUNDS_COUNT);
-            }
-            case "3" -> {
-                greeting();
-                Calculator.playCalculator(userName, MAX_ROUNDS_COUNT);
-            }
-            case "4" -> {
-                greeting();
-                GreatestCommonDivisor.playGCD(userName, MAX_ROUNDS_COUNT);
-            }
-            case "5" -> {
-                greeting();
-                Progression.playProgression(userName, MAX_ROUNDS_COUNT);
-            }
-            default -> {
+            System.out.println("Question: " + questionParameters);
+            System.out.print("Your answer: ");
+            Scanner sc = new Scanner(System.in);
+            userAnswer = sc.next();
+
+            if (userAnswer.equals(rightAnswer)) {
+                System.out.println(POSITIVE_FEEDBACK);
+                counter += 1;
+            } else {
+                System.out.println(giveNegativeFeedback(userAnswer, rightAnswer, userName));
                 return;
             }
         }
+
+        System.out.println("Gratulations, " + userName + "!");
     }
 }
