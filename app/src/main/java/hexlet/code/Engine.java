@@ -36,7 +36,7 @@ public class Engine {
             System.out.println("Question: " + questionParameters);
             System.out.print("Your answer: ");
             Scanner sc = new Scanner(System.in);
-            userAnswer = sc.next();
+            userAnswer = sc.next().toLowerCase();
 
             if (userAnswer.equals(rightAnswer)) {
                 System.out.println(POSITIVE_FEEDBACK);

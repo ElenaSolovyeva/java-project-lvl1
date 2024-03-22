@@ -21,4 +21,4 @@
 [![asciicast](https://asciinema.org/a/pu2ejDCkvdnUoMQ3GaoWdx6pO.svg)](https://asciinema.org/a/pu2ejDCkvdnUoMQ3GaoWdx6pO)
 
 ### Game "Prime"
-[![asciicast](https://asciinema.org/a/wilJdYutkX9oBeBj4zOoo4rlR.svg)](https://asciinema.org/a/wilJdYutkX9oBeBj4zOoo4rlR)
+[![asciicast](https://asciinema.org/a/wq7XDyNFF5y9c6lAqV6xKCGwT.svg)](https://asciinema.org/a/wq7XDyNFF5y9c6lAqV6xKCGwT)
