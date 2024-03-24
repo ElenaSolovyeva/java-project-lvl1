@@ -1,6 +1,6 @@
 package hexlet.code.games;
 
-import java.util.List;
+import hexlet.code.util.Parameters;
 import static hexlet.code.util.Utils.getGCD;
 import static hexlet.code.util.Utils.getRandomNumber;
 
@@ -14,19 +14,15 @@ public class GCD {
     private static final int MIN_MULTIPLIER = 2;
     private static final int MAX_MULTIPLIER = 5;
 
-    public static String generateQuestionParameters() {
+    public static Parameters generateParameters() {
+        Parameters param = new Parameters();
         final int multiplier = getRandomNumber(MIN_MULTIPLIER, MAX_MULTIPLIER);
         final int firstNumber = getRandomNumber(MIN_NUMBER, MAX_NUMBER) * multiplier;
         final int secondNumber = getRandomNumber(MIN_NUMBER, MAX_NUMBER) * multiplier;
+        param.setQuestionParameters(firstNumber + " " + secondNumber);
+        int rightAnswer = getGCD(firstNumber, secondNumber);
+        param.setRightAnswer(rightAnswer + "");
 
-        return firstNumber + " " + secondNumber;
-    }
-
-    public static String giveRightAnswer(String questionParameters) {
-        final List<String> parameters = List.of(questionParameters.split(" "));
-        final int firstNumber = Integer.parseInt(parameters.getFirst());
-        final int secondNumber = Integer.parseInt(parameters.getLast());
-
-        return getGCD(firstNumber, secondNumber) + "";
+        return param;
     }
 }

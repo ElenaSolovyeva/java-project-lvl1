@@ -1,9 +1,9 @@
 package hexlet.code;
 
 import hexlet.code.games.Calc;
-/*import hexlet.code.games.Even;
+import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
-import hexlet.code.games.Prime;*/
+import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
 
 import hexlet.code.util.Games;
@@ -47,18 +47,15 @@ public class Engine {
                 case "Calc":
                     param = Calc.generateParameters();
                     break;
-               /* case "Even":
-                    questionParameters = Even.generateQuestionParameters();
-                    rightAnswer = Even.giveRightAnswer(questionParameters);
+                case "Even":
+                    param = Even.generateParameters();
                     break;
                 case "GCD":
-                    questionParameters = GCD.generateQuestionParameters();
-                    rightAnswer = GCD.giveRightAnswer(questionParameters);
+                    param = GCD.generateParameters();
                     break;
                 case "Prime":
-                    questionParameters = Prime.generateQuestionParameters();
-                    rightAnswer = Prime.giveRightAnswer(questionParameters);
-                    break;*/
+                    param = Prime.generateParameters();
+                    break;
                 case "Progression":
                     param = Progression.generateParameters();
                     break;

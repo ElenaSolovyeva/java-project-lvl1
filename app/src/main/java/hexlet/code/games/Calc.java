@@ -34,25 +34,4 @@ public class Calc {
         }
         return  param;
     }
-
-    /*public static String generateQuestionParameters() {
-        final int firstNumber = getRandomNumber(MIN_NUMBER, MAX_NUMBER);
-        final int secondNumber = getRandomNumber(MIN_NUMBER, MAX_NUMBER);
-        final int operatorIndex = (int) (Math.random() * 10) % OPERATIONS.length;
-        final String operator = OPERATIONS[operatorIndex];
-        return firstNumber + " " + operator + " " + secondNumber;
-    }
-
-    public static String giveRightAnswer(String questionParameters) {
-        final List<String> parameters = List.of(questionParameters.split(" "));
-        final int firstNumber = Integer.parseInt(parameters.getFirst());
-        final int lastNumber = Integer.parseInt(parameters.getLast());
-
-        return switch (parameters.get(1)) {
-            case "+" -> firstNumber + lastNumber + "";
-            case "-" -> firstNumber - lastNumber + "";
-            case "*" -> firstNumber * lastNumber + "";
-            default -> "Error: false parameters";
-        };
-    }*/
 }

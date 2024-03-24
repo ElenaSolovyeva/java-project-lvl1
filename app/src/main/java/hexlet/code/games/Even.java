@@ -1,5 +1,6 @@
 package hexlet.code.games;
 
+import hexlet.code.util.Parameters;
 import static hexlet.code.util.Utils.POSITIVE_ANSWER;
 import static hexlet.code.util.Utils.NEGATIVE_ANSWER;
 import static hexlet.code.util.Utils.getRandomNumber;
@@ -11,13 +12,12 @@ public class Even {
     private static final int MIN_NUMBER = 1;
     private static final int MAX_NUMBER = 99;
 
-    public static String generateQuestionParameters() {
-        final int number = getRandomNumber(MIN_NUMBER, MAX_NUMBER);
-        return number + "";
-    }
-
-    public static String giveRightAnswer(String questionParameters) {
-        int number = Integer.parseInt(questionParameters);
-        return (number % 2 == 0) ? POSITIVE_ANSWER : NEGATIVE_ANSWER;
+    public static Parameters generateParameters() {
+        Parameters param = new Parameters();
+        int randomNumber = getRandomNumber(MIN_NUMBER, MAX_NUMBER);
+        param.setQuestionParameters(randomNumber + "");
+        String rightAnswer = (randomNumber % 2 == 0) ? POSITIVE_ANSWER : NEGATIVE_ANSWER;
+        param.setRightAnswer(rightAnswer);
+        return param;
     }
 }
