@@ -11,7 +11,7 @@ public class Games {
     static Game even = new Game(Even.ID, Even.TITLE, Even.RULES);
     static Game calc = new Game(Calc.ID, Calc.TITLE, Calc.RULES);
     static Game gcd = new Game(GCD.ID, GCD.TITLE, GCD.RULES);
-    static Game progression = new Game(Progression.ID, Progression.TITEL, Progression.RULES);
+    static Game progression = new Game(Progression.ID, Progression.TITLE, Progression.RULES);
     static Game prime = new Game(Prime.ID, Prime.TITLE, Prime.RULES);
     static Game exit = new Game(0, "Exit", "");
 

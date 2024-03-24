@@ -4,7 +4,10 @@ import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
+
 import hexlet.code.util.Games;
+import hexlet.code.util.Parameters;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -55,6 +58,11 @@ public class Engine {
                 case "Prime":
                     questionParameters = Prime.generateQuestionParameters();
                     rightAnswer = Prime.giveRightAnswer(questionParameters);
+                    break;
+                case "Progression":
+                    Parameters param = Progression.generateParameters();
+                    questionParameters = param.getQuestionParameters();
+                    rightAnswer = param.getRightAnswer();
                     break;
                 default:
                     questionParameters = "Question parameters are not defined";
