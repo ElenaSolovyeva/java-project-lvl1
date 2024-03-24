@@ -1,9 +1,9 @@
 package hexlet.code;
 
 import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
+/*import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
-import hexlet.code.games.Prime;
+import hexlet.code.games.Prime;*/
 import hexlet.code.games.Progression;
 
 import hexlet.code.util.Games;
@@ -20,7 +20,7 @@ import static hexlet.code.util.Games.getTitle;
 public class Engine {
     public static final int MAX_ROUNDS_COUNT = 3;
 
-    public static void play() {
+    public static void play() throws Exception {
         int gameNumber = 0;
         try {
             gameNumber = selectGame(); // final int GAME_NUMBER = selectGame();  isn't accept by linter
@@ -39,15 +39,15 @@ public class Engine {
 
         while (counter < MAX_ROUNDS_COUNT) {
             String questionParameters;
-            String rightAnswer = "";
+            String rightAnswer;
             String userAnswer;
+            Parameters param;
 
             switch (getTitle(gameNumber)) {
                 case "Calc":
-                    questionParameters = Calc.generateQuestionParameters();
-                    rightAnswer = Calc.giveRightAnswer(questionParameters);
+                    param = Calc.generateParameters();
                     break;
-                case "Even":
+               /* case "Even":
                     questionParameters = Even.generateQuestionParameters();
                     rightAnswer = Even.giveRightAnswer(questionParameters);
                     break;
@@ -58,15 +58,16 @@ public class Engine {
                 case "Prime":
                     questionParameters = Prime.generateQuestionParameters();
                     rightAnswer = Prime.giveRightAnswer(questionParameters);
-                    break;
+                    break;*/
                 case "Progression":
-                    Parameters param = Progression.generateParameters();
-                    questionParameters = param.getQuestionParameters();
-                    rightAnswer = param.getRightAnswer();
+                    param = Progression.generateParameters();
                     break;
                 default:
-                    questionParameters = "Question parameters are not defined";
+                    return;
             }
+
+            questionParameters = param.getQuestionParameters();
+            rightAnswer = param.getRightAnswer();
 
             System.out.println("Question: " + questionParameters);
             System.out.print("Your answer: ");
