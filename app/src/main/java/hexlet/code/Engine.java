@@ -1,6 +1,7 @@
 package hexlet.code;
 
 import hexlet.code.games.Calc;
+import hexlet.code.games.Even;
 import hexlet.code.games.Prime;
 import hexlet.code.util.Games;
 import java.util.Scanner;
@@ -32,6 +33,11 @@ public class Engine {
                     questionParameters = Calc.generateQuestionParameters();
                     rightAnswer = Calc.giveRightAnswer(questionParameters);
                     break;
+                case "Even":
+                    questionParameters = Even.generateQuestionParameters();
+                    rightAnswer = Even.giveRightAnswer(questionParameters);
+                    break;
+
                 case "Prime":
                     questionParameters = Prime.generateQuestionParameters();
                     rightAnswer = Prime.giveRightAnswer(questionParameters);

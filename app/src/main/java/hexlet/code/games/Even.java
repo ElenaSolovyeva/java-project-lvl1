@@ -1,39 +1,23 @@
 package hexlet.code.games;
 
-import java.util.Scanner;
+import static hexlet.code.util.Utils.POSITIVE_ANSWER;
+import static hexlet.code.util.Utils.NEGATIVE_ANSWER;
+import static hexlet.code.util.Utils.getRandomNumber;
 
 public class Even {
-    public static final String RULES = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     public static final int ID = 2;
     public static final String TITEL = "Even";
-    public static void playEven(String userName, int maxRoundsCount) {
-        int counter = 0;
-        String positiveAnswer = "yes";
-        String negativeAnswer = "no";
+    public static final String RULES = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    private static final int MIN_NUMBER = 1;
+    private static final int MAX_NUMBER = 99;
 
-        while (counter < maxRoundsCount) {
-            System.out.println(RULES);
-            int number = (int) (Math.random() * 10);
-            boolean isEven = number % 2 == 0;
-            System.out.println("Question: " + number);
-            Scanner scanner = new Scanner(System.in);
-            System.out.print("Your answer: ");
-            String userAnswer = scanner.next();
+    public static String generateQuestionParameters() {
+        final int number = getRandomNumber(MIN_NUMBER, MAX_NUMBER);
+        return number + "";
+    }
 
-            if (isEven && userAnswer.equals(positiveAnswer) || !isEven && userAnswer.equals(negativeAnswer)) {
-                System.out.println("\nCorrect!");
-                counter += 1;
-            } else {
-                String correctAnswer = negativeAnswer;
-                if (userAnswer.equals(negativeAnswer)) {
-                    correctAnswer = positiveAnswer;
-                }
-                System.out.println("'" + userAnswer + "'" + " is a wrong answer ;(. Correct answer was "
-                        + "'" + correctAnswer + "'");
-                System.out.println("Let's try again, " + userName);
-                return;
-            }
-        }
-        System.out.println("Congratulations, " + userName + "!");
+    public static String giveRightAnswer(String questionParameters) {
+        int number = Integer.parseInt(questionParameters);
+        return (number % 2 == 0) ? POSITIVE_ANSWER : NEGATIVE_ANSWER;
     }
 }

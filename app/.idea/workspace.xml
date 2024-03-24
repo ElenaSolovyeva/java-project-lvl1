@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d9af654-369a-4ffb-8fae-e32e1f7fa47c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hexlet/code/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hexlet/code/Engine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hexlet/code/games/Calc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hexlet/code/games/Calc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hexlet/code/util/Games.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hexlet/code/util/Games.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hexlet/code/util/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hexlet/code/util/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hexlet/code/games/Even.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hexlet/code/games/Even.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,8 +217,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.app [installDist]" />
-        <item itemvalue="Gradle.app [clean]" />
         <item itemvalue="Gradle.app [checkstyleMain]" />
+        <item itemvalue="Gradle.app [clean]" />
         <item itemvalue="Application.App" />
         <item itemvalue="Gradle.app [build]" />
       </list>
