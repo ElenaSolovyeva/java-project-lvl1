@@ -22,3 +22,5 @@
 
 ### Game "Prime"
 [![asciicast](https://asciinema.org/a/wq7XDyNFF5y9c6lAqV6xKCGwT.svg)](https://asciinema.org/a/wq7XDyNFF5y9c6lAqV6xKCGwT)
+
+##Version 1.0  24.03.2024
