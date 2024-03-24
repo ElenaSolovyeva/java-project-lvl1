@@ -6,7 +6,7 @@ import static hexlet.code.util.Utils.isPrime;
 
 public class Prime {
     public static final int ID = 6;
-    public static final String TITEL = "Prime";
+    public static final String TITLE = "Prime";
     public static final String RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     private static final int MIN_NUMBER = 4;

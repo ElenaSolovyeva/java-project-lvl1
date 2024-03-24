@@ -6,7 +6,7 @@ import static hexlet.code.util.Utils.getRandomNumber;
 
 public class Even {
     public static final int ID = 2;
-    public static final String TITEL = "Even";
+    public static final String TITLE = "Even";
     public static final String RULES = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     private static final int MIN_NUMBER = 1;
     private static final int MAX_NUMBER = 99;

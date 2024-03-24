@@ -5,7 +5,7 @@ import static hexlet.code.util.Utils.getRandomNumber;
 
 public class Calc {
     public static final int ID = 3;
-    public static final String TITEL = "Calc";
+    public static final String TITLE = "Calc";
     public static final String RULES = "What is the result of the expression?";
 
     private static final int MIN_NUMBER = 1;

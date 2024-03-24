@@ -1,7 +1,7 @@
 package hexlet.code.util;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
-
 import static hexlet.code.util.Games.games;
 
 public class Utils {
@@ -35,6 +35,18 @@ public class Utils {
         }
     }
 
+    public static int getGCD(int first, int second) {
+        int maxNumber = Math.abs(Math.max(first, second));
+        int result = 1;
+
+        for (int i = 2; i <= maxNumber; i++) {
+            if (first % i == 0 && second % i == 0) {
+                result = i;
+            }
+        }
+        return result;
+    }
+
     public static String greeting() {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
@@ -44,7 +56,7 @@ public class Utils {
         return name;
     }
 
-    public static int selectGame() {
+    public static int selectGame()  throws InputMismatchException {
         System.out.println("Please enter the game number and press Enter.");
         for (var game : games) {
             System.out.println(game.id + " - " + game.title);

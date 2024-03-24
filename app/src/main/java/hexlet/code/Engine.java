@@ -2,8 +2,11 @@ package hexlet.code;
 
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
 import hexlet.code.games.Prime;
 import hexlet.code.util.Games;
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import static hexlet.code.util.Utils.POSITIVE_FEEDBACK;
 import static hexlet.code.util.Utils.giveNegativeFeedback;
@@ -15,10 +18,18 @@ public class Engine {
     public static final int MAX_ROUNDS_COUNT = 3;
 
     public static void play() {
-        final int gameNumber = selectGame(); // final int GAME_NUMBER = selectGame();  isn't accept by linter
+        int gameNumber = 0;
+        try {
+            gameNumber = selectGame(); // final int GAME_NUMBER = selectGame();  isn't accept by linter
+        } catch (InputMismatchException e) {
+            System.out.println("You should give a game number. Please try again.");
+            return;
+        }
+
         if (gameNumber == 0) {
             return;
         }
+
         final String userName = greeting();
         int counter = 0;
         System.out.println(Games.getRules(gameNumber));
@@ -37,7 +48,10 @@ public class Engine {
                     questionParameters = Even.generateQuestionParameters();
                     rightAnswer = Even.giveRightAnswer(questionParameters);
                     break;
-
+                case "GCD":
+                    questionParameters = GCD.generateQuestionParameters();
+                    rightAnswer = GCD.giveRightAnswer(questionParameters);
+                    break;
                 case "Prime":
                     questionParameters = Prime.generateQuestionParameters();
                     rightAnswer = Prime.giveRightAnswer(questionParameters);

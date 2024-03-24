@@ -1,50 +1,32 @@
 package hexlet.code.games;
 
-import java.util.Scanner;
+import java.util.List;
+import static hexlet.code.util.Utils.getGCD;
+import static hexlet.code.util.Utils.getRandomNumber;
 
 /*GCD: Greatest Common Divisor*/
 public class GCD {
     public static final int ID = 4;
-    public static final String TITEL = "GCD";
+    public static final String TITLE = "GCD";
     public static final String RULES = "Find the greatest common divisor of given numbers.";
+    private static final int MIN_NUMBER = 1;
+    private static final int MAX_NUMBER = 20;
+    private static final int MIN_MULTIPLIER = 2;
+    private static final int MAX_MULTIPLIER = 5;
 
-    public static int getGCD(int first, int second) {
-        int maxNumber = Math.abs(Math.max(first, second));
-        int result = 1;
+    public static String generateQuestionParameters() {
+        final int multiplier = getRandomNumber(MIN_MULTIPLIER, MAX_MULTIPLIER);
+        final int firstNumber = getRandomNumber(MIN_NUMBER, MAX_NUMBER) * multiplier;
+        final int secondNumber = getRandomNumber(MIN_NUMBER, MAX_NUMBER) * multiplier;
 
-        for (int i = 2; i <= maxNumber / 2; i++) {
-            if (first % i == 0 && second % i == 0) {
-                result = i;
-            }
-        }
-        return result;
+        return firstNumber + " " + secondNumber;
     }
-    public static void playGCD(String userName, int maxRoundsCount) {
-        int counter = 0;
-        System.out.println(RULES);
 
-        while (counter < maxRoundsCount) {
-            int multiplier = (int) (2 + (Math.random() * 10) % 5);
-            int firstNumber = (int) (Math.random() * 10 + 1) * multiplier;
-            int secondNumber = (int) (Math.random() * 10 + 1) * multiplier;
-            int gcd = getGCD(firstNumber, secondNumber);
-            System.out.println("Question: " + firstNumber + " " + secondNumber);
-            Scanner scanner = new Scanner(System.in);
-            System.out.print("Your answer: ");
-            String userAnswer = scanner.next();
-            int answer = Integer.parseInt(userAnswer);
+    public static String giveRightAnswer(String questionParameters) {
+        final List<String> parameters = List.of(questionParameters.split(" "));
+        final int firstNumber = Integer.parseInt(parameters.getFirst());
+        final int secondNumber = Integer.parseInt(parameters.getLast());
 
-            if (answer == gcd) {
-                System.out.println("\nCorrect!");
-                counter += 1;
-            } else {
-                System.out.println("'" + userAnswer + "'" + " is a wrong answer ;(. Correct answer was "
-                        + "'" + gcd + "'");
-                System.out.println("Let's try again, " + userName);
-                return;
-            }
-        }
-
-        System.out.println("Congratulations, " + userName + "!");
+        return getGCD(firstNumber, secondNumber) + "";
     }
 }
