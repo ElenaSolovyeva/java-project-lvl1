@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import hexlet.code.games.Calc;
 import hexlet.code.games.Prime;
 import hexlet.code.util.Games;
 import java.util.Scanner;
@@ -7,25 +8,31 @@ import static hexlet.code.util.Utils.POSITIVE_FEEDBACK;
 import static hexlet.code.util.Utils.giveNegativeFeedback;
 import static hexlet.code.util.Utils.greeting;
 import static hexlet.code.util.Utils.selectGame;
+import static hexlet.code.util.Games.getTitle;
 
 public class Engine {
     public static final int MAX_ROUNDS_COUNT = 3;
 
     public static void play() {
-        final int gameNumber = selectGame(); // GAME_NUMBER isn't accept by linter
+        final int gameNumber = selectGame(); // final int GAME_NUMBER = selectGame();  isn't accept by linter
         if (gameNumber == 0) {
             return;
         }
         final String userName = greeting();
         int counter = 0;
         System.out.println(Games.getRules(gameNumber));
+
         while (counter < MAX_ROUNDS_COUNT) {
             String questionParameters;
             String rightAnswer = "";
             String userAnswer;
 
-            switch (gameNumber) {
-                case 6:
+            switch (getTitle(gameNumber)) {
+                case "Calc":
+                    questionParameters = Calc.generateQuestionParameters();
+                    rightAnswer = Calc.giveRightAnswer(questionParameters);
+                    break;
+                case "Prime":
                     questionParameters = Prime.generateQuestionParameters();
                     rightAnswer = Prime.giveRightAnswer(questionParameters);
                     break;

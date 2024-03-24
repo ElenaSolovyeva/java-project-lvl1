@@ -15,18 +15,6 @@ public class Utils {
                 + "\nLet's try again, " + userName;
     }
 
-    public static String giveOppositAnswer(String userAnswer) {
-        String result;
-        if (userAnswer.equals(POSITIVE_ANSWER)) {
-            result = NEGATIVE_ANSWER;
-        } else if (userAnswer.equals(NEGATIVE_ANSWER)) {
-            result = POSITIVE_ANSWER;
-        } else {
-            result = userAnswer;
-        }
-        return result;
-    }
-
     public static boolean isPrime(int number) {
         boolean result = true;
         for (int i = 2; i <= number / 2; i++) {

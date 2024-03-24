@@ -17,6 +17,14 @@ public class Games {
 
     public static Game[] games = {greet, even, calc, gcd, progression, prime, exit};
 
+    public static String getTitle(int gameNumber) {
+        for (var game : games) {
+            if (game.id == gameNumber) {
+                return game.title;
+            }
+        }
+        return "Error: game title is not found";
+    }
     public static String getRules(int gameNumber) {
         for (var game : games) {
             if (game.id == gameNumber) {
