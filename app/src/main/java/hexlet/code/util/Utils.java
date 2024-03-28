@@ -1,19 +1,11 @@
 package hexlet.code.util;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
-import static hexlet.code.util.Games.games;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Utils {
     public static final String POSITIVE_ANSWER = "yes";
     public static final String NEGATIVE_ANSWER = "no";
-    public static final String POSITIVE_FEEDBACK = "Correct!";
-
-    public static String giveNegativeFeedback(String userAnswer, String rightAnswer, String userName) {
-        return "'" + userAnswer + "' is a wrong answer ;(."
-                + " Correct answer was '" + rightAnswer + "'."
-                + "\nLet's try again, " + userName;
-    }
 
     public static boolean isPrime(int number) {
         boolean result = true;
@@ -35,34 +27,18 @@ public class Utils {
         }
     }
 
-    public static int getGCD(int first, int second) {
-        int maxNumber = Math.abs(Math.max(first, second));
-        int result = 1;
+    public static List<Integer> getRandomList(int minProgressionLength, int maxProgressionLength,
+                                              int minFirstMember, int maxFirstMember,
+                                              int minCommonDifference, int maxCommonDifference) {
+        List<Integer> result = new ArrayList<>();
+        int progressionLength = getRandomNumber(minProgressionLength, maxProgressionLength);
+        int firstMember = getRandomNumber(minFirstMember, maxFirstMember);
+        int commonDifference = getRandomNumber(minCommonDifference, maxCommonDifference);
 
-        for (int i = 2; i <= maxNumber; i++) {
-            if (first % i == 0 && second % i == 0) {
-                result = i;
-            }
+        for (int i = 1; i < progressionLength + 1; i++) {
+            result.add(firstMember + i * commonDifference);
         }
+
         return result;
-    }
-
-    public static String greeting() {
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        Scanner scanner = new Scanner(System.in);
-        String name = scanner.next();
-        System.out.println("Hello, " + name + "!");
-        return name;
-    }
-
-    public static int selectGame()  throws InputMismatchException {
-        System.out.println("Please enter the game number and press Enter.");
-        for (var game : games) {
-            System.out.println(game.id + " - " + game.title);
-        }
-        System.out.print("Your choise: ");
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextInt();
     }
 }

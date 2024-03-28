@@ -61,4 +61,4 @@ A prime number is defined as a natural number greater than 1 that can only be di
  
 [![asciicast](https://asciinema.org/a/wq7XDyNFF5y9c6lAqV6xKCGwT.svg)](https://asciinema.org/a/wq7XDyNFF5y9c6lAqV6xKCGwT)
 
-##Version 1.1  27.03.2024
+## Version 1.1 (27.03.2024)

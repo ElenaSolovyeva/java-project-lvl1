@@ -1,29 +1,26 @@
 package hexlet.code;
 
+import static hexlet.code.App.greeting;
+import static hexlet.code.App.selectGame;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
-
-import hexlet.code.util.Games;
-import hexlet.code.util.Parameters;
-
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
-import static hexlet.code.util.Utils.POSITIVE_FEEDBACK;
-import static hexlet.code.util.Utils.giveNegativeFeedback;
-import static hexlet.code.util.Utils.greeting;
-import static hexlet.code.util.Utils.selectGame;
-import static hexlet.code.util.Games.getTitle;
 
 public class Engine {
     public static final int MAX_ROUNDS_COUNT = 3;
 
-    public static void play() throws Exception {
-        int gameNumber = 0;
+    public static void play() throws InputMismatchException {
+        int counter = 0;
+        int gameNumber;
+        String userName;
+
         try {
-            gameNumber = selectGame(); // final int GAME_NUMBER = selectGame();  isn't accept by linter
+            gameNumber = selectGame();
         } catch (InputMismatchException e) {
             System.out.println("You should give a game number. Please try again.");
             return;
@@ -33,53 +30,60 @@ public class Engine {
             return;
         }
 
-        final String userName = greeting();
-        int counter = 0;
-        System.out.println(Games.getRules(gameNumber));
+        userName = greeting();
 
         while (counter < MAX_ROUNDS_COUNT) {
-            String questionParameters;
-            String rightAnswer;
-            String userAnswer;
-            Parameters param;
+            String gameRules;
+            String usersAnswer;
+            List<String> gameParameters;
 
-            switch (getTitle(gameNumber)) {
-                case "Calc":
-                    param = Calc.generateParameters();
+            switch (gameNumber) {
+                case 1:
+                    return;
+                case 2:
+                    gameRules = Even.RULES;
+                    gameParameters = Even.generateParameters();
                     break;
-                case "Even":
-                    param = Even.generateParameters();
+                case 3:
+                    gameRules = Calc.RULES;
+                    gameParameters = Calc.generateParameters();
                     break;
-                case "GCD":
-                    param = GCD.generateParameters();
+                case 4:
+                    gameRules = GCD.RULES;
+                    gameParameters = GCD.generateParameters();
                     break;
-                case "Prime":
-                    param = Prime.generateParameters();
+                case 5:
+                    gameRules = Progression.RULES;
+                    gameParameters = Progression.generateParameters();
                     break;
-                case "Progression":
-                    param = Progression.generateParameters();
+                case 6:
+                    gameRules = Prime.RULES;
+                    gameParameters = Prime.generateParameters();
                     break;
                 default:
                     return;
             }
 
-            questionParameters = param.getQuestionParameters();
-            rightAnswer = param.getRightAnswer();
+            if (counter == 0) {
+                System.out.println(gameRules);
+            }
 
-            System.out.println("Question: " + questionParameters);
-            System.out.print("Your answer: ");
-            Scanner sc = new Scanner(System.in);
-            userAnswer = sc.next().toLowerCase();
+            System.out.println("Question: " + gameParameters.getFirst());
+            Scanner scanner = new Scanner(System.in);
+            usersAnswer = scanner.next().toLowerCase();
 
-            if (userAnswer.equals(rightAnswer)) {
-                System.out.println(POSITIVE_FEEDBACK);
+            if (usersAnswer.equals(gameParameters.getLast())) {
+                System.out.println("Correct!");
                 counter += 1;
             } else {
-                System.out.println(giveNegativeFeedback(userAnswer, rightAnswer, userName));
+                System.out.println("'" + usersAnswer + "'" + " is a wrong answer ;(. "
+                        + "Correct answer was " + "'" + gameParameters.getLast() + "'. \n"
+                        + "Let's try again, " + userName + "!"
+                );
                 return;
             }
         }
 
-        System.out.println("Gratulations, " + userName + "!");
+        System.out.println("Congratulations, " + userName + "!");
     }
 }
