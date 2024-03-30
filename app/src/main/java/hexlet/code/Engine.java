@@ -7,9 +7,8 @@ import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
-import java.util.InputMismatchException;
-import java.util.List;
-import java.util.Scanner;
+
+import java.util.*;
 
 public class Engine {
     public static final int MAX_ROUNDS_COUNT = 3;
@@ -35,7 +34,7 @@ public class Engine {
         while (counter < MAX_ROUNDS_COUNT) {
             String gameRules;
             String usersAnswer;
-            List<String> gameParameters;
+            List<String> gameParameters = new ArrayList<>(Arrays.asList("Question parameters", "Right answer"));
 
             switch (gameNumber) {
                 case 1:
